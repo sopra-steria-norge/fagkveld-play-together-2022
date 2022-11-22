@@ -1,0 +1,11 @@
+{
+  "exclude": [
+    "packages/**/tests/**",
+    "packages/**/dist/**"
+ ],
+  "references": [
+    { "path": "./packages/designsystem" },
+    { "path": "./packages/designtokens" },
+    { "path": "./packages/frontend" }
+  ]
+}

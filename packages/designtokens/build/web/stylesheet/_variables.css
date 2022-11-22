@@ -1,0 +1,49 @@
+/**
+ * Do not edit directly
+ * Generated on Sun, 02 Oct 2022 14:36:57 GMT
+ */
+
+:root {
+  --text-decoration-none: none;
+  --text-case-none: none;
+  --body-text-bold: normal normal Bold 16 / AUTO Nunito Sans;
+  --body-text-italic: normal normal Italic 16 / AUTO Nunito Sans;
+  --body-text: normal normal Regular 16 / AUTO Nunito Sans;
+  --heading-six: normal normal Regular 22 / AUTO Nunito Sans;
+  --heading-five: normal normal Regular 26 / AUTO Nunito Sans;
+  --heading-four: normal normal Regular 32 / AUTO Nunito Sans;
+  --heading-three: normal normal Regular 36 / AUTO Nunito Sans;
+  --heading-two: normal normal Regular 42 / AUTO Nunito Sans;
+  --heading-one: normal normal Regular 48 / AUTO Nunito Sans;
+  --paragraph-spacing-0: 0;
+  --letter-spacing-0: 0%;
+  --font-size-6: 48px;
+  --font-size-5: 42px;
+  --font-size-4: 36px;
+  --font-size-3: 32px;
+  --font-size-2: 26px;
+  --font-size-1: 22px;
+  --font-size-0: 16px;
+  --font-weights-nunito-sans-2: Bold;
+  --font-weights-nunito-sans-1: Italic;
+  --font-weights-nunito-sans-0: Regular;
+  --line-heights-0: AUTO;
+  --font-families-nunito-sans: Nunito Sans;
+  --drop-shadow-heavy: 0px 4px 4px 0.5px #0000004d;
+  --drop-shadow-medium: 0px 2px 4px 0.5px #0000004d;
+  --drop-shadow-light: 0px 1px 4px 0.5px #0000004d;
+  --white: #fefefe;
+  --green-light: #8db5a4;
+  --green-dark: #345849;
+  --green-regular: #5f8575;
+  --black-regular: #000000;
+  --gray-light: #a1a9c8;
+  --gray-dark: #464e69;
+  --gray-regular: #727a97;
+  --blue-light: #706fff;
+  --blue-dark: #001aca;
+  --blue-regular: #0e43ff;
+  --red-light: #ff5130;
+  --red-dark: #900000;
+  --red-regular: #c90c00;
+}

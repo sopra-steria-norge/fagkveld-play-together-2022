@@ -1,0 +1,21 @@
+{
+  "name": "designtokens",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "transform": "token-transformer ./tokens/raw/tokens.json ./tokens/transformed/tokens.json",
+    "build": "yarn transform && ts-node ./build.ts",
+    "build:export": "yarn run build && shx cp -r ./build/web/stylesheet/_variables.css ../designsystem/lib"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "shx": "^0.3.4",
+    "style-dictionary": "^3.7.1",
+    "token-transformer": "^0.0.27",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.8.4"
+  }
+}

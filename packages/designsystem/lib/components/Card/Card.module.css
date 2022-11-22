@@ -1,0 +1,29 @@
+.card {
+  border: 1px solid lightgray;
+  border-radius: 3%;
+  box-sizing: border-box;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",
+    Helvetica, Arial, "Lucida Grande", sans-serif;
+  min-width: 200px;
+  max-width: 340px;
+  min-height: 160px;
+  padding: 2rem;
+  width: fit-content;
+  word-break: break-all;
+}
+
+.none {
+  box-shadow: none;
+}
+
+.minimum {
+  box-shadow: var(--drop-shadow-light);
+}
+
+.medium {
+  box-shadow: var(--drop-shadow-medium);
+}
+
+.maximum {
+  box-shadow: var(--drop-shadow-heavy);
+}

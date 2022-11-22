@@ -1,0 +1,17 @@
+{
+  "name": "designsystem-reference-template",
+  "version": "1.0.0",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "dev:frontend": "yarn workspace frontend dev",
+    "dev:designsystem": "yarn workspace designsystem dev",
+    "build:frontend": "yarn workspace frontend build",
+    "build:designsystem": "yarn workspace designsystem build:components"
+  },
+  "workspaces": [
+    "packages/frontend",
+    "packages/designsystem",
+    "packages/designtokens"
+  ]
+}
