@@ -3,3 +3,7 @@ packages/**/node_modules
 
 yarn-error.log
 .vercel
+
+packages/designsystem/dist
+packages/designsystem/storybook-static
+packages/frontend/.next
