@@ -5,12 +5,38 @@ on:
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
+  build:
+    runs-on: [self-hosted, Linux]
+
+    strategy:
+      matrix:
+        node-version: [18.x]
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 2
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Yarn install
+        run: yarn install
+
+      - name: Build and export designtokens
+        run: yarn workspace designtokens run build:export
+
+      - name: Build Storybook
+        run: yarn workspace designsystem run build:storybook
+
   deploy:
     runs-on: ubuntu-latest
     if: "!contains(github.event.head_commit.message, '[skip ci]')"
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Deploy to Vercel Action
         uses: BetaHuhn/deploy-to-vercel-action@v1
         with:
