@@ -21,9 +21,8 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-
-      - name: Set registry
-        run: npm set registry http://192.168.33.9:4873/
+          always-auth: true
+          registry-url: http://192.168.33.9:4873/
 
       - name: Yarn install
         run: yarn install
