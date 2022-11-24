@@ -31,7 +31,7 @@ jobs:
         run: yarn workspace designtokens run build:export
 
       - name: Build Storybook
-        run: yarn workspace designsystem run build:storybook
+        run: export NODE_OPTIONS=--openssl-legacy-provider && yarn workspace designsystem run build:storybook
 
       - name: Deploy to Vercel Action
         uses: BetaHuhn/deploy-to-vercel-action@v1
