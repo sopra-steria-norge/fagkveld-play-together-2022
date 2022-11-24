@@ -6,7 +6,7 @@ on:
     types: [opened, synchronize, reopened]
 jobs:
   deploy:
-    runs-on: [self-hosted, Linux]
+    runs-on: [ubuntu-latest]
 
     strategy:
       matrix:
@@ -22,7 +22,6 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           always-auth: true
-          registry-url: http://192.168.33.9:4873/
 
       - name: Yarn install
         run: yarn install
@@ -34,7 +33,7 @@ jobs:
         run: export NODE_OPTIONS=--openssl-legacy-provider && yarn workspace designsystem run build:storybook
 
       - name: Deploy to Vercel Action
-        uses: BetaHuhn/deploy-to-vercel-action@v1
+        uses: BetaHuhn/deploy-to-vercel-action@latest
         with:
           GITHUB_TOKEN: ${{ secrets.GH_PAT }}
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
