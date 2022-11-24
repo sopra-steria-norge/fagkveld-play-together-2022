@@ -1,7 +1,9 @@
-name: Deploy main to prod
+name: Deploy branch to test
 on:
   push:
-    branches: [main]
+    branches:
+      - "*"
+      - "!main"
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
@@ -41,6 +43,5 @@ jobs:
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
           VERCEL_SCOPE: "thawi"
           ALIAS_DOMAINS: |
-            play-together-designsystem.vercel.app
-            {USER}-{REPO}-{SHA}.vercel.app
-          PRODUCTION: true
+            play-together-designsystem-{BRANCH}.vercel.app
+          PRODUCTION: false
