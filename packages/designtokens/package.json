@@ -7,7 +7,7 @@
   "scripts": {
     "transform": "token-transformer ./tokens/raw/tokens.json ./tokens/transformed/tokens.json",
     "build": "yarn transform && ts-node ./build.ts",
-    "build:export": "yarn run build && shx cp -r ./build/web/stylesheet/_variables.css ../designsystem/lib && shx cp -r ./build/web/stylesheet/_variables.css ../frontend/styles/"
+    "build:export": "yarn run build && shx cp -r ./build/web/stylesheet/_variables.css ../designsystem/lib && shx cp -r ./build/web/stylesheet/_variables.css ../frontend/src/styles/"
   },
   "author": "",
   "license": "ISC",
