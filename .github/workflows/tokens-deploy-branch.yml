@@ -38,7 +38,7 @@ jobs:
       - name: Build Storybook
         run: export NODE_OPTIONS=--openssl-legacy-provider && yarn workspace designsystem run build:storybook
 
-      - name: Deploy to Vercel Action
+      - name: Deploy designsystem to Vercel Action
         uses: BetaHuhn/deploy-to-vercel-action@latest
         with:
           GITHUB_TOKEN: ${{ secrets.GH_PAT }}
@@ -48,4 +48,16 @@ jobs:
           VERCEL_SCOPE: "thawi"
           ALIAS_DOMAINS: |
             play-together-designsystem-{BRANCH}.vercel.app
+          PRODUCTION: false
+
+      - name: Deploy frontend to Vercel Action
+        uses: BetaHuhn/deploy-to-vercel-action@latest
+        with:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID_FRONTEND }}
+          VERCEL_SCOPE: "thawi"
+          ALIAS_DOMAINS: |
+            play-together-frontend-{BRANCH}.vercel.app
           PRODUCTION: false
