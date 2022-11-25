@@ -1,6 +1,6 @@
 import { useState, ChangeEvent } from "react";
 
-import { Card, Textfield } from "designsystem/lib/components";
+import { Button, Card, Textfield } from "designsystem/lib/components";
 
 import styles from "./Greeting.module.css";
 

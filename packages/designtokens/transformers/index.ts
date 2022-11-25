@@ -27,5 +27,5 @@ export function transformSizeToPx(token: DesignToken): string {
  */
 export function transformTypographyToFont(token: DesignToken): string {
   const { fontFamily, fontWeight, lineHeight, fontSize } = token.original.value;
-  return `normal normal ${fontWeight} ${fontSize}/${lineHeight} ${fontFamily}`;
+  return `normal normal ${fontWeight} ${fontSize}px/${lineHeight}px ${fontFamily}`;
 }
