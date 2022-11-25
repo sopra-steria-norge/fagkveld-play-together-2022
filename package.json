@@ -7,7 +7,8 @@
     "dev:frontend": "yarn workspace frontend dev",
     "dev:designsystem": "yarn workspace designsystem dev",
     "build:frontend": "yarn workspace frontend build",
-    "build:designsystem": "yarn workspace designsystem build:components"
+    "build:designsystem": "yarn workspace designsystem build:components",
+    "build:tokens": "yarn workspace designtokens build:export"
   },
   "workspaces": [
     "packages/frontend",
