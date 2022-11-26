@@ -108,13 +108,19 @@ Kjør kommandoene under **fra rot-katalogen i prosjektet** for å installere avh
 
 ```bash
 yarn                       # Installer avhengigheter
+yarn dev                   # Start storybook og frontend samtidig.
+```
+
+Du kan også starte Storybook og frontend hver for seg ved å kjøre disse kommandoene i hver sin terminal.
+
+```bash
 yarn run dev:frontend      # Start frontend app
 yarn run dev:designsystem  # Start storybook.
 ```
 
 Dette vil kjøre opp **frontend** på http://localhost:3000, og **designsystem/storybook** på http://localhost:6006/. 
 
-Åpne disse og kontroller at det er fritt for feilmeldinger.
+Når du har startet appene, se i terminal og konsoll og kontroller at det er fritt for feilmeldinger.
 
 ## 🛠 **Verktøykassa**
 

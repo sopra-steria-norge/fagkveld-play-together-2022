@@ -1,4 +1,4 @@
-import Button from "./Button/Button";
+import Button from "./Button";
 import Card from "./Card";
 import Heading from "./Heading";
 import Textfield from "./Textfield";

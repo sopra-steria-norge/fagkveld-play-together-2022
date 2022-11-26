@@ -8,7 +8,7 @@ export interface TextfieldProps {
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-const Textfield: React.FC<TextfieldProps> = ({
+export const Textfield: React.FC<TextfieldProps> = ({
   description,
   label,
   value,
@@ -34,5 +34,3 @@ const Textfield: React.FC<TextfieldProps> = ({
     </div>
   );
 };
-
-export default Textfield;
