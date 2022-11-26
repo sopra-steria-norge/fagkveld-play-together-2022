@@ -7,15 +7,29 @@
   display: flex;
   gap: var(--spacing-md);
   flex-direction: column;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",
-    Helvetica, Arial, "Lucida Grande", sans-serif;
   align-items: flex-start;
   min-width: 200px;
   max-width: 500px;
   min-height: 160px;
-  padding: var(--spacing-xxl);
-  width: 100%;
+  padding: var(--spacing-xl);
+  width: fit-content;
   word-break: break-all;
+}
+
+.cardHeading {
+  font-family: var(--font-family-tahoma);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-lg);
+  margin: var(--paragraph-spacing-0);
+  width: 100%;
+}
+
+.cardContent {
+  font-family: var(--font-family-tahoma);
+}
+
+.fillWidth {
+  width: 100%;
 }
 
 .none {

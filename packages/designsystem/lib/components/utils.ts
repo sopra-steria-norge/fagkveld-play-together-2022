@@ -1,5 +1,5 @@
 /**
- * Hjelpefunksjon for transformering av CSS regler til tekststrenger.
+ * Hjelpefunksjon for transformering av CSS-modules regler til tekststrenger.
  *
  * @param styles Et *.module.css objekt med CSS regler.
  * @returns CSS regler som en tekststreng for bruk i komponenter.

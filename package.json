@@ -4,6 +4,7 @@
   "license": "UNLICENSED",
   "private": true,
   "scripts": {
+    "dev": "concurrently --names  \"frontend,designsystem\" -c \"auto\" \"yarn run dev:frontend\" \"yarn run dev:designsystem\"",
     "dev:frontend": "yarn workspace frontend dev",
     "dev:designsystem": "yarn workspace designsystem dev",
     "build:frontend": "yarn workspace frontend build",
@@ -14,5 +15,8 @@
     "packages/frontend",
     "packages/designsystem",
     "packages/designtokens"
-  ]
+  ],
+  "devDependencies": {
+    "concurrently": "^7.6.0"
+  }
 }

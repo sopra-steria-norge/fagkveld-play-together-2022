@@ -1,8 +1,7 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
-import Card from "./Card";
+import { Card } from "./Card";
 
-// More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
   title: "Example/Card",
   component: Card,
@@ -10,13 +9,18 @@ export default {
     children: {
       control: "text",
       name: "String contents",
-      defaultValue: "Dette er et kort. Du kan fylle det med hva du vil!",
+      defaultValue: "Dette er et kort. Du kan fylle det med hva du vil.",
+    },
+    title: {
+      control: "text",
+      name: "Tittel",
+      defaultValue: "Tittel",
     },
   },
 } as ComponentMeta<typeof Card>;
 
-const Template: ComponentStory<typeof Card> = ({ children, elevation }) => {
-  return <Card elevation={elevation}>{children}</Card>;
+const Template: ComponentStory<typeof Card> = ({ children, elevation, title }) => {
+  return <Card elevation={elevation} title={title}>{children}</Card>;
 };
 
 export const Default = Template.bind({});

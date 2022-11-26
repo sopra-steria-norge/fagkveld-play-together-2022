@@ -1,0 +1,166 @@
+import { Meta } from "@storybook/addon-docs";
+import Code from "./assets/code-brackets.svg";
+import Colors from "./assets/colors.svg";
+import Comments from "./assets/comments.svg";
+import Direction from "./assets/direction.svg";
+import Flow from "./assets/flow.svg";
+import Plugin from "./assets/plugin.svg";
+import Repo from "./assets/repo.svg";
+import StackAlt from "./assets/stackalt.svg";
+
+<Meta title="Example/Intro" />
+
+<style>
+  {`
+    .subheading {
+      --mediumdark: '#999999';
+      font-weight: 900;
+      font-size: 13px;
+      color: #555;
+      letter-spacing: 0;
+      line-height: 24px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      margin-top: 40px;
+    }
+
+    .link-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr;
+      row-gap: 10px;
+    }
+
+    @media (min-width: 620px) {
+      .link-list {
+        row-gap: 20px;
+        column-gap: 20px;
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media all and (-ms-high-contrast:none) {
+    .link-list {
+        display: -ms-grid;
+        -ms-grid-columns: 1fr 1fr;
+        -ms-grid-rows: 1fr 1fr;
+      }
+    }
+
+    .bold {
+      font-weight: bold;
+    }
+
+    .hr {
+      background-color: red;
+    }
+
+    .link-item {
+      display: block;
+      padding: 20px 30px 20px 15px;
+      border: 1px solid #00000010;
+      border-radius: 5px;
+      transition: background 150ms ease-out, border 150ms ease-out, transform 150ms ease-out;
+      color: #333333;
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .link-item:hover {
+      border-color: #1EA7FD50;
+      transform: translate3d(0, -3px, 0);
+      box-shadow: rgba(0, 0, 0, 0.08) 0 3px 10px 0;
+    }
+
+    .link-item:active {
+      border-color: #1EA7FD;
+      transform: translate3d(0, 0, 0);
+    }
+
+    .link-item strong {
+      font-weight: 700;
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .link-item img {
+      height: 40px;
+      width: 40px;
+      margin-right: 15px;
+      flex: none;
+    }
+
+    .link-item span {
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    .tip {
+      display: inline-block;
+      border-radius: 1em;
+      font-size: 11px;
+      line-height: 12px;
+      font-weight: 700;
+      background: #E7FDD8;
+      color: #66BF3C;
+      padding: 4px 12px;
+      margin-right: 10px;
+      vertical-align: top;
+    }
+
+    .tip-wrapper {
+      font-size: 13px;
+      line-height: 20px;
+      margin-top: 40px;
+      margin-bottom: 40px;
+    }
+
+    .tip-wrapper code {
+      font-size: 12px;
+      display: inline-block;
+    }
+
+    .code {
+      font-family: monospace, monospace;
+      color: darkblue;
+    }
+  `}
+</style>
+
+# 👋 Velkommen til designsystemet
+
+Dette <strong>Storybook</strong>-prosjektet inneholder et knippe komponenter som du kan utforske fra menyen på venstre side.
+
+Samtlige stylingverdier i disse komponentene kommer fra design tokens, og CSS-verdiene er generert ved hjelp av <strong>style-dictionary</strong>.
+
+Presentasjonen av komponentene her i Storybook er definert i filene som ender på <span className="code">*.stories.tsx</span>.
+
+Prøv deg gjerne frem ved å redigere disse og se hvordan du kan endre presentasjonen. Det finnes også assistanse i <a href="https://storybook.js.org/docs/react/writing-stories/introduction">Storybook-docs</a>
+
+<div className="subheading">🧑‍💻 Hvordan bruker jeg komponentene?</div>
+
+Dersom du ønsker å benytte komponentene i en app du lager her monorepoet kan du legge designsystem-modulen til som en dependency og benytte komponentene rett ut av boksen.
+Sørg også for å importere <span className="code">_variables.css</span> i rot-CSS filen for appen for å kunne resolve alle stylingverdier.
+
+Dersom du ønsker å benytte komponentene i en ekstern app, se avsnitt under om bygging.
+
+<div className="subheading">🤓 Savner du et komponent?</div>
+
+Hvorfor ikke prøve å lage et selv? 
+
+Du finner eksisterende variabler i filen <span className="code">"designsystem/lib/_variables.css"</span> i dette prosjektet.
+
+Mangler du en variablel? Forsøk å lage en ny en ved hjelp av Figma Tokens.
+
+<div className="subheading">🏗️ Bygging av designsystem</div>
+
+Du kan kjøre kommandoen <span className="code">yarn run build:designsystem</span> for å transpilere komponentene til JavaScript filer som
+du kan ta med deg ut av prosjektet og bruke i et prosjekt utenfor monorepoet. 
+
+<span className="bold">OBS!</span>
+
+Vær oppmerksom på at byggprosessen er svært forenklet, og vil i praksis kun
+kjøre kommandoen <span className="code">tsc</span> for å transpilere TypeScript koden, og deretter kopiere all CSS til dist-katalogen. Du vil også måtte
+importere <span className="code">_variables.css</span> filen på rotnivå i destinasjons-appen for at alle stylingverdier skal tre i kraft.
+
+Dette oppsettet er ment som et enkelt men funksjonelt eksempel på hvordan du enkelt kan gjøre designsystemet og komponentene portabelt.
