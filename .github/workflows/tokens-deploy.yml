@@ -53,5 +53,5 @@ jobs:
           VERCEL_SCOPE: "thawi"
           ALIAS_DOMAINS: |
             play-together-frontend.vercel.app
-            {USER}-{REPO}-frontend-{SHA}.vercel.app
+            play-together-frontend-{SHA}.vercel.app
           PRODUCTION: true
