@@ -2,31 +2,78 @@
 
 **Velkommen til fagkveld for design + frontend!**
 
-Vi har forberedt dette prosjektet for å gi et innblikk i hvordan design tokens kan brukes i praksis. Dette er ingen absolutt fasit, og det er mange veier til mål, men vi har satt opp dette prosjektet på en måte som gjør at du raskt kommer i gang med å bygge et designsystem og en frontend-applikasjon som kan dra nytte av design tokens.
+Vi har forberedt dette repoet for å gi et innblikk i hvordan design tokens kan brukes i praksis, både til utvikling av designsystemer og frontend applikasjoner.
+
+Dette er ingen absolutt fasit, og det er mange veier til mål, men vi har satt opp dette repoet på en måte vi opplever som produktiv og fremtidsrettet.
+
+Følg oppskriften under for å komme i gang.
+
 
 ## 👩‍💻 **Hva trenger jeg for å være med?**
 
 Prosjektet er delt i tre ulike deler, som alle er knyttet sammen som et monorepo med [Yarn Workspaces](https://yarnpkg.com/features/workspaces).
 
-**❗️For å kunne kjøre eksemplene og følge den tekniske delen av workshopen må du ha følgende verktøy tilgjengelig:**
+**❗️For å kunne kjøre eksemplelkoden og følge den tekniske delen av workshopen må du ha følgende programvare og verktøy tilgjengelig:**
 
-* **Yarn**
+* **NodeJS** ([Windows](https://learn.microsoft.com/en-us/windows/dev-environment/javascript/nodejs-on-windows) / [MacOS + Linux](https://javascript.plainenglish.io/how-to-install-nvm-the-node-version-manager-4254744cbd57))
+* **Yarn** ([Yarn 1.x](https://classic.yarnpkg.com/en/docs/install#mac-stable) / [Yarn 3](https://yarnpkg.com/getting-started/install) - begge vil fungere)
 * **En kodeeditor** (VSCode, WebStorm, SublimeText, Atom, etc.)
 * **En terminal** (Windows/Mac/Linux)
 
-## 🌈 **Design tokens med Figma Tokens**
+> ***MERK**: Listen over inneholder linker til nedlasting og oppsett av Node og Yarn, men det er ingen spesifikke krav om versjon utover en relativt moderne versjon av Node (16 eller høyere). Det du har installert fra før vil antakelig fungere helt fint.*
 
-Noe av det fine med design tokens er at de uttrykkes i ren tekst, som oftest i form av JSON-filer. Dette gjør at vi kan frigjøre alle fargeverdier fra styling-språk og plattform, og dermed også et langt mer portabelt og teknologiagnostisk resultat. Vi kan da også enkelt generere styling-verdier for flere ulike plattformer og CSs-dialekter fra det samme grunnlaget. For å gjøre dette finnes det ulike verktøy der ute, men vi har valgt å fokusere på [style-dictionary](https://amzn.github.io/style-dictionary/#/) som foreløpig nok er det mest etablerte verktøyet for dette.
+## 🌈 **Design tokens + Figma Tokens**
+
+Design tokens er de minste mulige atomære designverdier som vi kan bruke i utforming av et gitt brukergrensesnitt. Vi tenker da på verdier som beskriver farger, fonter, avstander, størrelser og alt som vi på et eller annet vis behøver å angi i eksempelvis CSS. 
+
+Noe av det fine med design tokens er at de kan uttrykkes i ren tekst, og lagres i form av eks. JSON-filer. Dette gjør at vi kan frigjøre alle fargeverdier fra stylingspråk og plattform, og dermed også få en langt mer portabel og teknologiagnostisk måte å behandle designverdiene på. 
+
+La oss se på et eksempel:
+
+```json
+"red-500": {
+  "value": "#CF022B",
+  "type": "color"
+},
+```
+
+Dette er et token som beskriver en rødfarge. Den har en kode i navnet som peker på dens plass som en del av en større fargepalett, og består av en `type` og en `value`.
+
+Det som er kjekt med denne er at vi enkelt kan generere styling-verdier for flere ulike plattformer og CSs-dialekter basert på denne, og bruke de som variabler når vi utvikler. For å gjøre dette finnes det ulike verktøy der ute, men vi har valgt å fokusere på [style-dictionary](https://amzn.github.io/style-dictionary/#/) som foreløpig nok er det mest etablerte verktøyet for dette.
 
 Style-dictionary er et enkelt men kraftig verktøy for å generere variabler til web, iOS og Android. Det kan gjøres enten selvstendig via CLI, eller også som en del av et script. Du kan også utvide dette med egen skreddersydd logikk for håndtering av ulike typer variabler utover det som støttes av den medfølgende konfigurasjonen.
 
+Etter å ha vært prosessert av style-dictionary kan overnevnte token bli forvandlet til en av disse:
+
+```css
+/* _variables.css */
+
+--red-500: #CF022B;
+```
+
+```less
+// _variables.less
+
+@red-500: #CF022B;
+```
+
+```scss
+// _variables.scss
+
+$red-500: #CF022B;
+```
+
+Ved å nå bruke variabelen `--red-500` i stedet for `#CF022B` for å sette en farge i CSS-filene våre kan designeren nå tilpasse den faktiske fargeverdien, og alt vi trenger å gjøre er å generere nye og oppdaterte variabler - så ordner resten av CSS-en seg selv! 🪄
+
 **Hvordan får vi dette til å fungere med Figma?**
+
+I dag sverger mange designere til programvaren [Figma](https://www.figma.com). Dette er ikke uten grunn, da Figma er en meget kraftig og allsidig programvare.
 
 Dessverre er det ikke ennå innebygget støtte for design tokens i Figma. Men frykt ikke, det finnes heldigvis plugins som hjelper oss på vei!
 
 For å arbeide med design tokens i Figma kan du bruke pluginen [Figma Tokens](https://www.figma.com/community/plugin/843461159747178978).
 
-Denne pluginen vil la deg opprette, redigere og bruke design tokens rett i Figma prosjektet ditt. I tilleg har den mulighet for å skrive og lese tokens til et repo på GitHub, noe som gjør at man kan oppdatere `.json` filen med tokens rett fra Figma. Det er helt magisk! 🙏
+Denne pluginen vil la deg opprette, redigere og bruke design tokens rett i Figma prosjektet ditt. I tillegg har den funksjonalitet for å skrive og lese tokens direkte til et repo på GitHub, noe som gjør at man kan oppdatere `.json` filen med tokens rett fra Figma. 
 
 ### **Konfigurasjon av Figma Tokens med et GitGhub Repo**
 Før du kan skrive/lese til et GitHub repo med Figma Tokens må du først opprette en konfigurasjon i pluginen.Heldigvis er det enkelt å gjøre gjennom grensesnittet.
@@ -122,15 +169,25 @@ Dette vil kjøre opp **frontend** på http://localhost:3000, og **designsystem/s
 
 Når du har startet appene, se i terminal og konsoll og kontroller at det er fritt for feilmeldinger.
 
-## 🛠 **Verktøykassa**
 
-Her har vi funnet frem et knippe verktøy, tekster og snacks som kan være av verdi dersom du skal jobbe med tokens, designsystemer, frontendutvikling og alt i mellom.
+## 🫵 **Eksempler på oppgaver**
 
-// *Liste kommer*
+Når du har fått prosjektet opp og snurre er veien kort til å bygge videre på det selv.
+
+**Her er noen mulige veier du og din fagkveld-buddy kan ta:**
+
+1. Oppdater noen av de eksisterende tokens i Figma og sync med GitHub. Dra det ned lokalt og se endringene tre i kraft i Storybook og frontend applikasjonen.
+
+2. Legg til noen nye design tokens i Figma, sync de med GitHub, og generer nye variabler. Utform et nytt komponent basert på dette.
+
+3. Utvikle et nytt komponent i designsystem-prosjektet her. Hvilke verdier trenger du? Hva kan egne seg som tokens? Opprett disse med Figma-tokens og refaktorer komponentet til å bruke variabler generert fra disse.
+
+4. Lag et nytt komponent i Figma og bruk Figma Tokens til å definere tokens for relevante verdier. Forsøk så å implementere dette i kode ved å generere variabler av de tokens som er definert.
+
 
 ## 🎯 **Troubleshooting**
 
-Prosjektet er testet og bekreftet fungerende på både Windows, WSL og Mac. Samtidig er det umulig å garantere at alt vil fungere på nettop din maskin. Her er noen tips og råd dersom du møter på feil under kjøring.
+> Prosjektet er testet og bekreftet fungerende på både Windows, WSL og Mac. Samtidig er det umulig å garantere at alt vil fungere på nettop **din** maskin. Her er noen tips og råd dersom du møter på feil under kjøring.
 
 **Storybook kræsjer med feilmelding:** `Error: error:0308010C:digital envelope routines::unsupported`
 
@@ -140,3 +197,50 @@ De:
 * Sett miljøvariabel `NODE_OPTIONS=--openssl-legacy-provider` ved kjøring av Storybook.
 
 Dersom ingenting av dette hjelper finnes det mer assistanse her: https://stackoverflow.com/q/69692842
+
+## 🛠 **Verktøykassa**
+
+> Her har vi funnet frem et knippe verktøy, tekster og snacks som kan være av verdi dersom du skal jobbe med tokens, designsystemer, frontendutvikling og alt i mellom.
+
+### **Video:**
+
+* [How to create Design Tokens in Figma with Figma Tokens - Tutorial with Jan Six](https://www.youtube.com/watch?v=zkLfw6Jb6WM)
+
+* [“Atomic Design” by Brad Frost—An Event Apart Austin 2015](https://www.youtube.com/watch?v=W-h1FtNYim4) - Gammel men fortsatt god.
+
+* [Design Tokens using Style-Dictionary & Figma](https://www.youtube.com/watch?v=yDi5ADS2HKg)
+
+### **Artikler**
+
+* [Design Systems 101 - Nielsen Norman Group](https://www.nngroup.com/articles/design-systems-101/)
+
+* [A Recipe For A Good Design System - Smashing Magazine](https://www.smashingmagazine.com/2022/02/recipe-good-design-system/)
+
+* [Designing Systems - Brad Frost](https://atomicdesign.bradfrost.com/chapter-1/)
+
+* [10 Storybook Best Practices](https://betterprogramming.pub/10-storybooks-best-practices-ad5fec0f145a)
+
+### **Eksempler**:
+
+I listen under finner du noen utvalgte eksempler på gode designsystemer av ulik art:
+
+* [Jøkul Designsystem (Fremtind)](https://jokul.fremtind.no)
+
+* [Designsystemet Aksel (NAV)](https://aksel.nav.no)
+
+* [Material Design (Google)](https://m3.material.io)
+
+* [Carbon Design System (IBM)](https://carbondesignsystem.com)
+
+* [Human Interface Guidelines (Apple)](https://developer.apple.com/design/human-interface-guidelines/guidelines/overview/)
+
+* [Atlassian Design System](https://atlassian.design)
+
+
+### **Diverse**:
+
+* [BradFrost.com - Blog](https://bradfrost.com/blog/) - Blogginnlegg om designsystemer og mye annet fra Brad Frost.
+
+* [DesignSystems.tools](https://www.designsystem.tools) - Generell verktøykasse for designsystemer
+
+* [The Ultimate Design Systems Resources List](https://designstrategy.guide/design-management/the-ultimate-design-systems-resources-list/) - Generell verktøykasse for designsystemer og mye mer.
