@@ -21,11 +21,17 @@ jobs:
           node-version: 18.x
           always-auth: true
 
-      - name: Yarn install
+     - name: Yarn install
         run: yarn install
 
       - name: Build and export designtokens
-        run: yarn workspace designtokens run build:export
+        run: yarn workspace designtokens build:export
+
+      - name: Build frontend
+        run: yarn workspace frontend build
+
+      - name: Build designsystem
+        run: yarn workspace designsystem build:components
 
       - name: Build Storybook
         run: export NODE_OPTIONS=--openssl-legacy-provider && yarn workspace designsystem run build:storybook
