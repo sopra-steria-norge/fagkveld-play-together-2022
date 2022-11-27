@@ -21,7 +21,7 @@ jobs:
           node-version: 18.x
           always-auth: true
 
-     - name: Yarn install
+      - name: Yarn install
         run: yarn install
 
       - name: Build and export designtokens
