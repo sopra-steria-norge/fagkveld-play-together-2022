@@ -40,7 +40,7 @@ jobs:
           VERCEL_SCOPE: "thawi"
           ALIAS_DOMAINS: |
             play-together-designsystem.vercel.app
-            {USER}-{REPO}-designsystem-{SHA}.vercel.app
+            play-together-designsystem-{SHA}.vercel.app
           PRODUCTION: true
 
       - name: Deploy frontend to Vercel Action
