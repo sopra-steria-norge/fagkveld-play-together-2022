@@ -20,7 +20,9 @@ Prosjektet er delt i tre ulike deler, som alle er knyttet sammen som et monorepo
 * **En kodeeditor** (VSCode, WebStorm, SublimeText, Atom, etc.)
 * **En terminal** (Windows/Mac/Linux)
 
-> ***MERK**: Listen over inneholder linker til nedlasting og oppsett av Node og Yarn, men det er ingen spesifikke krav om versjon utover en relativt moderne versjon av Node (16 eller høyere). Det du har installert fra før vil antakelig fungere helt fint.*
+Listen over inneholder linker til nedlasting og oppsett av Node og Yarn, men det er ingen spesifikke krav om versjon utover en relativt moderne versjon av Node (16 eller høyere). Det du har installert fra før vil antakelig fungere helt fint.
+
+> ***OBS**: Eksisterende kode er skrevet i TypeScript, men dersom du heller foretrekker JavaScript er det fritt frem for å bruke det. Alle moduler i prosjektet er konfigurert for å tillate både JS og TS.*
 
 ## 🌈 **Design tokens + Figma Tokens**
 
