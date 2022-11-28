@@ -1,14 +1,14 @@
 import { useState, ChangeEvent } from "react";
 
-import { Button, Card, Textfield } from "designsystem/lib/components";
+import { Card, Textfield } from "designsystem/lib/components";
 
 import styles from "./Greeting.module.css";
 
 const Greeting: React.FC = () => {
   const [name, setName] = useState("");
 
-  function handleChange(e: ChangeEvent<HTMLInputElement>) {
-    setName(e.target.value);
+  function handleChange(event: ChangeEvent<HTMLInputElement>) {
+    setName(event.target.value);
   }
 
   /** Returnerer dagens motto hvis ikke navn er angitt. */
@@ -17,7 +17,7 @@ const Greeting: React.FC = () => {
   }
 
   return (
-    <Card elevation="minimum">
+    <Card elevation="minimum" fillWidth>
       <p className={styles.hello}>{getCardText()}</p>
       <Textfield label="Hva heter du?" onChange={handleChange} value={name} />
     </Card>

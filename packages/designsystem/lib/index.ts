@@ -5,7 +5,9 @@
  * i dist-katalogen.
  */
 
-import Button from "./components/Button";
-import Card from "./components/Card";
+import { Button } from "./components/Button/Button";
+import { Card } from "./components/Card/Card";
+import { Heading } from "./components/Heading/Heading";
+import { Textfield } from "./components/Textfield/Textfield";
 
-export { Button, Card };
+export { Button, Card, Heading, Textfield };
