@@ -10,17 +10,6 @@ function App() {
     <div className={styles.container}>
       <Heading level="h1">Play Together</Heading>
       <Greeting />
-      <div className={styles.buttonContainer}>
-        <Button
-          primary
-          onClick={() => window.alert("Takk for at du trykket!")}
-          label="Primærknapp"
-        />
-        <Button
-          onClick={() => window.alert("Takk for at du trykket!")}
-          label="Sekundærknapp"
-        />
-      </div>
     </div>
   );
 }

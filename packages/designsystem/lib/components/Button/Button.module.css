@@ -6,6 +6,8 @@
   cursor: pointer;
   display: inline-block;
   line-height: 1;
+  font-size: var(--spacing-md); 
+  margin-bottom: var(--spacing-md);
 
   transition: background-color 200ms ease-in-out;
   transition: color 200ms ease-in-out;
