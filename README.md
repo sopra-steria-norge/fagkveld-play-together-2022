@@ -13,7 +13,7 @@ Følg oppskriften under for å komme i gang.
 
 Prosjektet er delt i tre ulike deler, som alle er knyttet sammen som et monorepo med [Yarn Workspaces](https://yarnpkg.com/features/workspaces).
 
-**❗️For å kunne kjøre eksemplelkoden og følge den tekniske delen av workshopen må du ha følgende programvare og verktøy tilgjengelig:**
+**❗️For å kunne kjøre eksempelkoden og følge den tekniske delen av workshopen må du ha følgende programvare og verktøy tilgjengelig:**
 
 * **NodeJS** ([Windows](https://learn.microsoft.com/en-us/windows/dev-environment/javascript/nodejs-on-windows) / [MacOS + Linux](https://javascript.plainenglish.io/how-to-install-nvm-the-node-version-manager-4254744cbd57))
 * **Yarn** ([Yarn 1.x](https://classic.yarnpkg.com/en/docs/install#mac-stable) / [Yarn 3](https://yarnpkg.com/getting-started/install) - begge vil fungere)
@@ -41,7 +41,7 @@ La oss se på et eksempel:
 
 Dette er et token som beskriver en rødfarge. Den har en kode i navnet som peker på dens plass som en del av en større fargepalett, og består av en `type` og en `value`.
 
-Det som er kjekt med denne er at vi enkelt kan generere styling-verdier for flere ulike plattformer og CSs-dialekter basert på denne, og bruke de som variabler når vi utvikler. For å gjøre dette finnes det ulike verktøy der ute, men vi har valgt å fokusere på [style-dictionary](https://amzn.github.io/style-dictionary/#/) som foreløpig nok er det mest etablerte verktøyet for dette.
+Det som er kjekt med denne er at vi enkelt kan generere styling-verdier for flere ulike plattformer og CSS-dialekter basert på denne, og bruke de som variabler når vi utvikler. For å gjøre dette finnes det ulike verktøy der ute, men vi har valgt å fokusere på [style-dictionary](https://amzn.github.io/style-dictionary/#/) som foreløpig nok er det mest etablerte verktøyet for dette.
 
 Style-dictionary er et enkelt men kraftig verktøy for å generere variabler til web, iOS og Android. Det kan gjøres enten selvstendig via CLI, eller også som en del av et script. Du kan også utvide dette med egen skreddersydd logikk for håndtering av ulike typer variabler utover det som støttes av den medfølgende konfigurasjonen.
 
@@ -78,7 +78,7 @@ For å arbeide med design tokens i Figma kan du bruke pluginen [Figma Tokens](ht
 Denne pluginen vil la deg opprette, redigere og bruke design tokens rett i Figma prosjektet ditt. I tillegg har den funksjonalitet for å skrive og lese tokens direkte til et repo på GitHub, noe som gjør at man kan oppdatere `.json` filen med tokens rett fra Figma. 
 
 ### **Konfigurasjon av Figma Tokens med et GitGhub Repo**
-Før du kan skrive/lese til et GitHub repo med Figma Tokens må du først opprette en konfigurasjon i pluginen.Heldigvis er det enkelt å gjøre gjennom grensesnittet.
+Før du kan skrive/lese til et GitHub repo med Figma Tokens må du først opprette en konfigurasjon i pluginen. Heldigvis er det enkelt å gjøre gjennom grensesnittet.
 
 Følg oppskriften under for å komme i gang:
     <br/>
