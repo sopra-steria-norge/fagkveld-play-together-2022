@@ -1,58 +1,14 @@
 .storybook-button {
   font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: var(--font-weight-bold);
-  border-radius: var(--border-radius-lg);
-  box-shadow: var(--drop-shadow-heavy);
   cursor: pointer;
-  display: inline-block;
-  line-height: 1;
-  font-size: var(--spacing-md); 
+  font-size: var(--font-size-md); 
   margin-bottom: var(--spacing-md);
-
-  transition: background-color 200ms ease-in-out;
-  transition: color 200ms ease-in-out;
-}
-
-.storybook-button:hover {
-  transition: background-color 200ms ease-in-out;
-  transition: color 200ms ease-in-out;
+  padding: var(--button-padding-horizontal) var(--button-padding-vertical);
 }
 
 .storybook-button--primary {
-  color: var(--button-primary-default-text-color);
-  background-color: var(--button-primary-default-background-color);
-  border: 1px solid var(--button-primary-default-border-color);
-}
-
-.storybook-button--primary:hover {
-  background-color: var(--button-primary-hover-background-color);
-  color: var(--button-primary-hover-text-color);
-  border: 1px solid var(--button-primary-hover-border-color);
-}
-
-.storybook-button--secondary {
-  color: var(--button-secondary-default-text-color);
-  background-color: var(--button-secondary-default-background-color);
-  border: 1px solid var(--button-secondary-default-border-color);
-}
-
-.storybook-button--secondary:hover {
-  background-color: var(--button-secondary-hover-background-color);
-  color: var(--button-secondary-hover-text-color);
-  border: 1px solid var(--button-secondary-hover-border-color);
-}
-
-.storybook-button--small {
-  font-size: var(--font-size-sm);
-  padding: var(--button-padding-vertical-sm) var(--button-padding-horizontal-sm);
-}
-
-.storybook-button--medium {
-  font-size: var(--font-size-md);
-  padding: var(--button-padding-vertical-md) var(--button-padding-horizontal-md);
-}
-
-.storybook-button--large {
-  font-size: var(--font-size-lg);
-  padding: var(--button-padding-vertical-lg) var(--button-padding-horizontal-lg);
+  color: var(--text-color-primary-button);
+  background-color: var(--background-color-primary-button);
+  border: 1px solid var(--border-color-primary-button);
 }

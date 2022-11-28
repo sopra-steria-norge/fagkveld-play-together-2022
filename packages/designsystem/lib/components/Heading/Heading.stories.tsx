@@ -22,12 +22,12 @@ const Template: ComponentStory<typeof Heading> = (args) => (
 
 export const HeadingOne = Template.bind({});
 HeadingOne.args = {
-  level: "h1",
+  as: "h1",
   children: "En massiv heading",
 };
 
 export const HeadingTwo = Template.bind({});
 HeadingTwo.args = {
-  level: "h2",
+  as: "h2",
   children: "En ganske stor heading",
 };

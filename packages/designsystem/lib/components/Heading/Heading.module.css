@@ -1,32 +1,12 @@
 .heading {
   color: var(--grey-900);
+  font-family: var(--font-default);
 }
 
-.heading-h1 {
-  composes: heading;
-  font: var(--heading-5xl);
+.heading-size-xxl{
+  font-size: var(--font-size-xxl);
 }
 
-.heading-h2 {
-  composes: heading;
-  font: var(--heading-4xl);
-}
-
-.heading-h3 {
-  composes: heading;
-  font: var(--heading-3xl);
-}
-
-.heading-h4 {
-  composes: heading;
-  font: var(--heading-xxl);
-}
-
-.heading-h5 {
-  composes: heading;
-  font: var(--heading-xl);
-}
-
-.heading-h6 {
-  composes: heading;
+.heading-red {
+  color: var(--red-300);
 }
