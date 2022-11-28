@@ -13,7 +13,7 @@ const Greeting: React.FC = () => {
 
   /** Returnerer dagens motto hvis ikke navn er angitt. */
   function getCardText() {
-    return name ? `Hei, ${name}! 👋` : "Frontend + Design = ♥️";
+    return name ? `Hei, ${name}! 👋` : "Frontend! + Design = ♥️";
   }
 
   return (
