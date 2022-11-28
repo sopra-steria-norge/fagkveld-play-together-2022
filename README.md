@@ -178,9 +178,11 @@ Når du har fått prosjektet opp og snurre er veien kort til å bygge videre på
 
 **Her er noen mulige veier du og din fagkveld-buddy kan ta:**
 
-1. Oppdater noen av de eksisterende tokens i Figma og sync med GitHub. Dra det ned lokalt og se endringene tre i kraft i Storybook og frontend applikasjonen.
+1. **Begynn fra scratch med et tomt prosjekt i Figma**. Sett opp noen design tokens og utform et enkelt komponent. Synkroniser tokens med GitHub, og implementer komponentet. Bonus: Refaktorer eksisterende komponenter til å bruke nye tokens.
 
-2. Legg til noen nye design tokens i Figma, sync de med GitHub, og generer nye variabler. Utform et nytt komponent basert på dette.
+1. Importer eksisterende tokens i Figma. Oppdater så noen av disse sync med GitHub. Dra det ned lokalt og se endringene tre i kraft i Storybook og frontend applikasjonen.
+
+2. Importer eksisterende tokens i Figma. Legg til noen nye design tokens, sync de med GitHub, og generer nye variabler til frontendprosjektene. Utform et nytt komponent basert på dette.
 
 3. Utvikle et nytt komponent i designsystem-prosjektet her. Hvilke verdier trenger du? Hva kan egne seg som tokens? Opprett disse med Figma-tokens og refaktorer komponentet til å bruke variabler generert fra disse.
 
